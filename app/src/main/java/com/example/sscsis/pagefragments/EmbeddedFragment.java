@@ -8,6 +8,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 /**
@@ -59,13 +61,26 @@ public class EmbeddedFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_embedded, container, false);
+        View lview =  inflater.inflate(R.layout.fragment_embedded, container, false);
+
+        Button button = (Button) lview.findViewById(R.id.button2);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Embedded Button Clicked!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        return lview;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
