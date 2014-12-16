@@ -4,7 +4,24 @@
     tools:context="com.example.sscsis.pagefragments.MyNewFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="200dp"
+            android:text="@string/hello_blank_fragment"
+            android:id="@+id/" />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:name="com.example.sscsis.pagefragments.EmbeddedFragment"
+            android:id="@+id/fragment"
+            android:layout_gravity="left|top"
+            tools:layout="@layout/fragment_embedded" />
+    </LinearLayout>
 
 </FrameLayout>
