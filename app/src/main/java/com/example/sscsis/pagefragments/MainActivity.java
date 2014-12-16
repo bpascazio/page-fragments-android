@@ -90,13 +90,16 @@ public class MainActivity extends ActionBarActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            if(position < 3)
+                return PlaceholderFragment.newInstance(position + 1);
+            else
+                return MyNewFragment.newInstance("one", "two");
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
 
         @Override
@@ -142,7 +145,7 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_second, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_third, container, false);
             return rootView;
         }
     }
